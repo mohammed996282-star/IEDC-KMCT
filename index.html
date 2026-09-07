@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IEDC KMCT | Innovation & Entrepreneurship Development Cell</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: #050505;
+            color: #f5f5f5;
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1250px;
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           NAVBAR
+        ===================================================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.88);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: #b7ff3c;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            color: #aaa;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #b7ff3c;
+        }
+
+        .nav-button {
+            border: 1px solid #333;
+            padding: 10px 18px;
+            border-radius: 50px;
+        }
+
+        .nav-button:hover {
+            border-color: #b7ff3c;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            padding-top: 150px;
+            padding-bottom: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            width: 90%;
+            max-width: 1250px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: #b7ff3c;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(60px, 8vw, 110px);
+            line-height: 0.95;
+            letter-spacing: -6px;
+            max-width: 850px;
+        }
+
+        .hero h1 span {
+            color: #b7ff3c;
+        }
+
+        .hero-description {
+            margin-top: 35px;
+            color: #999;
+            max-width: 600px;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #b7ff3c;
+            color: #000;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(183,255,60,0.15);
+        }
+
+        .btn-secondary {
+            border: 1px solid #333;
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            border-color: #b7ff3c;
+            color: #b7ff3c;
+        }
+
+
+        /* =====================================================
+           HERO CARD
+        ===================================================== */
+
+        .hero-card {
+            height: 430px;
+
+            border: 1px solid #262626;
+            border-radius: 30px;
+
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    rgba(183,255,60,0.12),
+                    transparent 35%
+                ),
+                #0a0a0a;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-circle {
+            width: 230px;
+            height: 230px;
+
+            border: 1px solid rgba(183,255,60,0.4);
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #b7ff3c;
+
+            font-family: "Space Grotesk";
+            font-size: 55px;
+            font-weight: 700;
+        }
+
+        .hero-circle::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+
+
+        /* =====================================================
+           STATS
+        ===================================================== */
+
+        .stats {
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+            padding: 55px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat h2 {
+            font-family: "Space Grotesk";
+            font-size: 50px;
+            color: #b7ff3c;
+        }
+
+        .stat p {
+            color: #777;
+            margin-top: 5px;
+        }
+
+
+        /* =====================================================
+           COMMON SECTIONS
+        ===================================================== */
+
+        section {
+            padding: 130px 0;
+        }
+
+        .section-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 60px;
+            gap: 30px;
+        }
+
+        .section-number {
+            color: #b7ff3c;
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-heading h2 {
+            font-family: "Space Grotesk";
+            font-size: clamp(45px, 6vw, 75px);
+            line-height: 1;
+            letter-spacing: -3px;
+        }
+
+        .section-heading p {
+            color: #777;
+            max-width: 400px;
+        }
+
+
+        /* =====================================================
+           MISSION / VISION
+        ===================================================== */
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .mission-card {
+            min-height: 350px;
+
+            padding: 45px;
+
+            border: 1px solid #252525;
+            border-radius: 25px;
+
+            background: #0a0a0a;
+
+            transition: 0.4s;
+        }
+
+        .mission-card:hover {
+            border-color: #b7ff3c;
+            transform: translateY(-5px);
+        }
+
+        .card-number {
+            color: #b7ff3c;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 70px;
+        }
+
+        .mission-card h3 {
+            font-family: "Space Grotesk";
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .mission-card p {
+            color: #888;
+            font-size: 16px;
+            max-width: 550px;
+        }
+
+
+        /* =====================================================
+           FACULTY
+        ===================================================== */
+
+        .faculty {
+            background: #080808;
+        }
+
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .faculty-card {
+            min-height: 450px;
+
+            border: 1px solid #292929;
+            border-radius: 30px;
+
+            background: #0d0d0d;
+
+            padding: 40px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+
+            position: relative;
+            overflow: hidden;
+
+            transition: 0.4s;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-7px);
+            border-color: #b7ff3c;
+        }
+
+        .faculty-photo {
+            position: absolute;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(183,255,60,0.12),
+                    transparent 50%
+                );
+        }
+
+        .faculty-initial {
+            width: 170px;
+            height: 170px;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(183,255,60,0.4);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-family: "Space Grotesk";
+            font-size: 55px;
+
+            color: #b7ff3c;
+        }
+
+        .faculty-info {
+            position: relative;
+            z-index: 2;
+            padding-top: 200px;
+        }
+
+        .faculty-info h3 {
+            font-family: "Space Grotesk";
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .faculty-info p {
+            color: #b7ff3c;
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           STUDENT TEAM
+        ===================================================== */
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .member {
+            border: 1px solid #242424;
+            border-radius: 20px;
+
+            padding: 28px;
+
+            background: #090909;
+
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            transition: 0.35s;
+        }
+
+        .member:hover {
+            border-color: #b7ff3c;
+            transform: translateY(-4px);
+        }
+
+        .member-image {
+            min-width: 75px;
+            width: 75px;
+            height: 75px;
+
+            border-radius: 50%;
+
+            border: 1px solid #333;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            color: #b7ff3c;
+
+            font-family: "Space Grotesk";
+            font-weight: 700;
+            font-size: 20px;
+
+            background: #111;
+        }
+
+        .member-info h3 {
+            font-family: "Space Grotesk";
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .member-info p {
+            color: #777;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           SOCIAL LINKS
+        ===================================================== */
+
+        .social-links {
+            display: flex;
+            gap: 8px;
+            margin-top: 14px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 7px 13px;
+
+            border-radius: 50px;
+
+            font-size: 11px;
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .linkedin {
+            border: 1px solid #333;
+            color: #aaa;
+        }
+
+        .linkedin:hover {
+            background: #0a66c2;
+            border-color: #0a66c2;
+            color: white;
+        }
+
+        .whatsapp {
+            border: 1px solid #333;
+            color: #aaa;
+        }
+
+        .whatsapp:hover {
+            background: #25d366;
+            border-color: #25d366;
+            color: white;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .cta-section {
+            padding: 100px 0;
+        }
+
+        .cta-box {
+            border: 1px solid #292929;
+            border-radius: 35px;
+
+            padding: 90px 60px;
+
+            text-align: center;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(183,255,60,0.08),
+                    transparent 45%
+                ),
+                #090909;
+        }
+
+        .cta-box h2 {
+            font-family: "Space Grotesk";
+
+            font-size: clamp(45px, 7vw, 85px);
+
+            letter-spacing: -4px;
+            line-height: 1;
+
+            max-width: 800px;
+
+            margin: auto;
+        }
+
+        .cta-box h2 span {
+            color: #b7ff3c;
+        }
+
+        .cta-box p {
+            color: #777;
+
+            margin: 25px auto 35px;
+
+            max-width: 500px;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            border-top: 1px solid #222;
+            padding: 50px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .footer-logo {
+            font-family: "Space Grotesk";
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .footer-logo span {
+            color: #b7ff3c;
+        }
+
+        .footer-content p {
+            color: #666;
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .hero-container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-card {
+                height: 300px;
+            }
+
+            .hero h1 {
+                font-size: 65px;
+                letter-spacing: -4px;
+            }
+
+            .mission-grid,
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-heading {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .container {
+                width: 88%;
+            }
+
+            nav {
+                height: 70px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 120px;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero-description {
+                font-size: 15px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            section {
+                padding: 90px 0;
+            }
+
+            .section-heading h2 {
+                font-size: 50px;
+            }
+
+            .mission-card {
+                padding: 30px;
+            }
+
+            .mission-card h3 {
+                font-size: 32px;
+            }
+
+            .faculty-card {
+                min-height: 420px;
+                padding: 30px;
+            }
+
+            .faculty-info h3 {
+                font-size: 25px;
+            }
+
+            .member {
+                padding: 20px;
+            }
+
+            .member-info h3 {
+                font-size: 17px;
+            }
+
+            .cta-box {
+                padding: 70px 25px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<header>
+
+    <div class="container">
+
+        <nav>
+
+            <a href="#" class="logo">
+                IEDC<span>.</span>
+            </a>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="#about">About</a>
+                </li>
+
+                <li>
+                    <a href="#mission">Mission</a>
+                </li>
+
+                <li>
+                    <a href="#faculty">Faculty</a>
+                </li>
+
+                <li>
+                    <a href="#team">Team</a>
+                </li>
+
+                <li>
+                    <a href="https://chat.whatsapp.com/ESpXwJv4GVzEG6PHVxnhyE"
+                       target="_blank"
+                       class="nav-button">
+                        Contact Us
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =====================================================
+     HERO
+====================================================== -->
+
+<main>
+
+<section class="hero" id="about">
+
+    <div class="hero-container">
+
+        <div>
+
+            <div class="eyebrow">
+                Innovation & Entrepreneurship Development Cell / 2026
+            </div>
+
+            <h1>
+                Build what
+                <span>comes next.</span>
+            </h1>
+
+            <p class="hero-description">
+                IEDC is a campus launchpad for students who want to
+                transform ideas into meaningful innovations, startups
+                and real-world solutions.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#team" class="btn btn-primary">
+                    Meet the team →
+                </a>
+
+                <a href="#mission" class="btn btn-secondary">
+                    Explore our mission
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-card">
+
+            <div class="hero-circle">
+                IEDC
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STATS
+====================================================== -->
+
+<section class="stats">
+
+    <div class="container">
+
+        <div class="stats-grid">
+
+            <div class="stat">
+                <h2>10+</h2>
+                <p>Active Members</p>
+            </div>
+
+            <div class="stat">
+                <h2>20+</h2>
+                <p>Workshops & Events</p>
+            </div>
+
+            <div class="stat">
+                <h2>15+</h2>
+                <p>Ideas & Innovations</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MISSION
+====================================================== -->
+
+<section id="mission">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    01 / Direction
+                </div>
+
+                <h2>
+                    Why we<br>
+                    exist.
+                </h2>
+
+            </div>
+
+            <p>
+                We create an environment where students can explore,
+                experiment, collaborate and turn ideas into impact.
+            </p>
+
+        </div>
+
+
+        <div class="mission-grid">
+
+
+            <div class="mission-card">
+
+                <div class="card-number">
+                    01 — MISSION
+                </div>
+
+                <h3>
+                    Empower ideas.
+                </h3>
+
+                <p>
+                    Our mission is to encourage students to identify
+                    problems, develop innovative solutions and gain
+                    the confidence to turn their ideas into real
+                    projects and ventures.
+                </p>
+
+            </div>
+
+
+            <div class="mission-card">
+
+                <div class="card-number">
+                    02 — VISION
+                </div>
+
+                <h3>
+                    Shape the future.
+                </h3>
+
+                <p>
+                    We envision a community of creative thinkers,
+                    innovators and entrepreneurs capable of creating
+                    technology-driven solutions for society.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FACULTY
+====================================================== -->
+
+<section class="faculty" id="faculty">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    02 / Faculty
+                </div>
+
+                <h2>
+                    Faculty<br>
+                    Leadership.
+                </h2>
+
+            </div>
+
+            <p>
+                Guiding the IEDC community with experience,
+                mentorship and direction.
+            </p>
+
+        </div>
+
+
+        <div class="faculty-grid">
+
+
+            <!-- ABDUL MAJEED -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-photo">
+
+                    <div class="faculty-initial">
+                        AM
+                    </div>
+
+                </div>
+
+                <div class="faculty-info">
+
+                    <h3>
+                        Abdul Majeed K M
+                    </h3>
+
+                    <p>
+                        IEDC Nodal Officer
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/abdul-majeed-k-m/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/919895413378"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ABDUL MUJEEB -->
+
+            <div class="faculty-card">
+
+                <div class="faculty-photo">
+
+                    <div class="faculty-initial">
+                        AM
+                    </div>
+
+                </div>
+
+                <div class="faculty-info">
+
+                    <h3>
+                        Abdul Mujeeb M S
+                    </h3>
+
+                    <p>
+                        IEDC Nodal Officer
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/mujeebpatla/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/919633964433"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     STUDENT TEAM
+====================================================== -->
+
+<section id="team">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <div>
+
+                <div class="section-number">
+                    03 / Students
+                </div>
+
+                <h2>
+                    The student<br>
+                    team.
+                </h2>
+
+            </div>
+
+            <p>
+                A team of students working together to build,
+                organize and grow the IEDC community.
+            </p>
+
+        </div>
+
+
+        <div class="team-grid">
+
+
+            <!-- MUHAMMED JAZEEL -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    MJ
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Muhammed Jazeel
+                    </h3>
+
+                    <p>
+                        Student Lead 1
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/muhammed-jazeel-c-a-832a62427/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/919947397003"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- AYSHA -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    AM
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Aysha M
+                    </h3>
+
+                    <p>
+                        Student Lead 2
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/aysha-malik-44b271390/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/919048409538"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MOHAMMED KN -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    MK
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Mohammed K N
+                    </h3>
+
+                    <p>
+                        Tech Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/mohammed-k-n-78773b390/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/919526602008"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RUSHQAIQA -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    RC
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Rushaiqa C M
+                    </h3>
+
+                    <p>
+                        Community and Event Management Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/rushaiqa-cm-580303423/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/918157956455"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- SADHAFA -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    SF
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Sadhafa Fazal
+                    </h3>
+
+                    <p>
+                        Woman Entrepreneurship Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/haleema-sadhafa-fazal-642315399/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/917510911635"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- UNNIMAYA -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    UT
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Unnimaya T
+                    </h3>
+
+                    <p>
+                        Branding and Marketing Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/unnimaya-madhav-522a04420/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/919778712161"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RUFAID -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    RA
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Rufaid Abdulla
+                    </h3>
+
+                    <p>
+                        Creative and Innovation Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/rufaid-abdulla-581732390/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/971559130295"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ALAN -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    AA
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Alan Albin
+                    </h3>
+
+                    <p>
+                        Finance Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/alan-albin-909113316/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/918848563266"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FATHIMA SHIZA -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    FS
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Fathima Shiza Sidhik
+                    </h3>
+
+                    <p>
+                        Quality and Operation Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/shiza-sidhik-0b3797413/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/918138914094"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HAYA -->
+
+            <div class="member">
+
+                <div class="member-image">
+                    HF
+                </div>
+
+                <div class="member-info">
+
+                    <h3>
+                        Haya Fathima
+                    </h3>
+
+                    <p>
+                        IPR and Research Lead
+                    </p>
+
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/haya-fathima-7871bb395/"
+                           target="_blank"
+                           class="linkedin">
+                            LinkedIn
+                        </a>
+
+                        <a href="https://wa.me/918921409192"
+                           target="_blank"
+                           class="whatsapp">
+                            WhatsApp
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CONTACT / CTA
+====================================================== -->
+
+<section class="cta-section">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>
+                Got an idea worth
+                <span>building?</span>
+            </h2>
+
+            <p>
+                Have an idea, project or problem you want to solve?
+                Connect with the IEDC KMCT team and start building.
+            </p>
+
+            <a href="https://chat.whatsapp.com/ESpXwJv4GVzEG6PHVxnhyE"
+               target="_blank"
+               class="btn btn-primary">
+                Contact Us on WhatsApp →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-content">
+
+            <div class="footer-logo">
+                IEDC<span>.</span>
+            </div>
+
+            <p>
+                Innovation & Entrepreneurship Development Cell
+            </p>
+
+            <p>
+                KMCT
+            </p>
+
+            <p>
+                © 2026 IEDC. All rights reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+====================================================== -->
+
+<script>
+
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+        link.addEventListener("click", function(e) {
+
+            const target = document.querySelector(
+                this.getAttribute("href")
+            );
+
+            if (target) {
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            }
+
+        });
+
+    });
+
+</script>
+
+
+</body>
+</html>
