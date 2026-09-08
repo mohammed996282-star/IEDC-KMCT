@@ -367,19 +367,19 @@ section{
 /* STUDENTS */
 
 .team-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:20px;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
 }
 
 .member{
     border:1px solid #242424;
-    border-radius:22px;
-    padding:20px;
+    border-radius:25px;
+    padding:25px;
     background:#090909;
     display:flex;
     align-items:center;
-    gap:22px;
+    gap:35px;
     transition:.35s;
 }
 
@@ -389,10 +389,10 @@ section{
 }
 
 .member-image{
-    min-width:150px;
-    width:150px;
-    height:180px;
-    border-radius:16px;
+    min-width:280px;
+    width:280px;
+    height:330px;
+    border-radius:20px;
     overflow:hidden;
     background:#111;
 }
@@ -402,6 +402,11 @@ section{
     height:100%;
     object-fit:cover;
     object-position:center top;
+    transition:transform .4s ease;
+}
+
+.member:hover .member-image img{
+    transform:scale(1.05);
 }
 
 .member-info{
@@ -410,18 +415,19 @@ section{
 
 .member-info h3{
     font-family:"Space Grotesk";
-    font-size:22px;
+    font-size:38px;
     line-height:1.2;
-    margin-bottom:8px;
+    margin-bottom:12px;
 }
 
 .member-info .role{
     display:block;
-    margin-bottom:6px;
+    margin-bottom:8px;
+    font-size:15px !important;
 }
 
 .member-info .department{
-    line-height:1.5;
+    font-size:14px !important;
 }
 
 /* SOCIAL */
@@ -609,22 +615,22 @@ footer{
         height:350px;
     }
 
-    .member{
-        align-items:flex-start;
-        padding:16px;
-        gap:15px;
-    }
+   .member{
+    flex-direction:column;
+    align-items:flex-start;
+    padding:18px;
+    gap:20px;
+}
 
-    .member-image{
-        min-width:105px;
-        width:105px;
-        height:140px;
-    }
+.member-image{
+    width:100%;
+    min-width:100%;
+    height:350px;
+}
 
-    .member-info h3{
-        font-size:17px;
-    }
-
+.member-info h3{
+    font-size:28px;
+}
     .member-info .role{
         font-size:11px !important;
     }
