@@ -234,21 +234,31 @@
             color: #000 !important;
         }
 
+        /* ===== PARTNER LOGOS — NOW BIGGER ===== */
         .partner-logos {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             margin-left: 25px;
         }
         .partner-logos img {
-            width: 44px;
-            height: 44px;
+            width: 58px;
+            height: 58px;
             object-fit: contain;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
+            opacity: 0.85;
+            transition: all 0.3s ease;
+            filter: brightness(0.9) contrast(1.1);
         }
         .partner-logos img:hover {
             opacity: 1;
+            transform: scale(1.08);
+            filter: brightness(1) contrast(1.2);
+        }
+        /* Add a subtle divider between logos */
+        .partner-logos .divider {
+            width: 1.5px;
+            height: 38px;
+            background: rgba(255, 255, 255, 0.08);
         }
 
         /* Hamburger */
@@ -477,7 +487,7 @@
         }
 
         /* ============================================
-                   IMPACT / PROCESS — IMPROVED SENTENCES
+                   IMPACT / PROCESS
                 ============================================ */
         .impact-section {
             background: #080808;
@@ -1104,14 +1114,20 @@
             .hamburger {
                 display: flex;
             }
+
+            /* ===== PARTNER LOGOS — BIGGER ON TABLET ===== */
             .partner-logos {
-                margin-left: auto;
-                gap: 8px;
+                margin-left: 12px;
+                gap: 12px;
             }
             .partner-logos img {
-                width: 35px;
-                height: 35px;
+                width: 48px;
+                height: 48px;
             }
+            .partner-logos .divider {
+                height: 30px;
+            }
+
             .nav-container {
                 height: 70px;
                 padding: 0 16px;
@@ -1259,10 +1275,20 @@
                 gap: 16px;
                 flex-wrap: wrap;
             }
-            .partner-logos img {
-                width: 28px;
-                height: 28px;
+
+            /* ===== PARTNER LOGOS — BIGGER ON MOBILE ===== */
+            .partner-logos {
+                gap: 8px;
+                margin-left: 8px;
             }
+            .partner-logos img {
+                width: 40px;
+                height: 40px;
+            }
+            .partner-logos .divider {
+                height: 24px;
+            }
+
             .cta {
                 padding: 40px 20px;
             }
@@ -1295,9 +1321,11 @@
                 <li role="none"><a href="#contact" role="menuitem" class="nav-contact">Contact Us</a></li>
             </ul>
 
+            <!-- ===== PARTNER LOGOS — NOW BIGGER ===== -->
             <div class="partner-logos">
-                <img src="images/iedc-kerala-logo.png" alt="IEDC Kerala" />
-                <img src="images/ksum-logo.png" alt="Kerala Startup Mission" />
+                <img src="images/iedc-kerala-logo.png" alt="IEDC Kerala" title="IEDC Kerala" />
+                <span class="divider"></span>
+                <img src="images/ksum-logo.png" alt="Kerala Startup Mission" title="Kerala Startup Mission" />
             </div>
 
             <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -1345,10 +1373,9 @@
         </div>
     </section>
 
-    <!-- ===== IMPACT / PROCESS — UPGRADED WITH BEST SENTENCES ===== -->
+    <!-- ===== IMPACT / PROCESS ===== -->
     <section class="impact-section" id="process">
         <div class="impact-grid">
-            <!-- IDEATE -->
             <div class="impact-card animate-on-scroll">
                 <div class="impact-number">01</div>
                 <h3>IDEATE</h3>
@@ -1359,7 +1386,6 @@
                 <span class="tagline">✨ "Every great innovation begins with a single spark of curiosity."</span>
             </div>
 
-            <!-- INNOVATE -->
             <div class="impact-card animate-on-scroll">
                 <div class="impact-number">02</div>
                 <h3>INNOVATE</h3>
@@ -1370,7 +1396,6 @@
                 <span class="tagline">🚀 "Turning impossible into possible — one breakthrough at a time."</span>
             </div>
 
-            <!-- IMPACT -->
             <div class="impact-card animate-on-scroll">
                 <div class="impact-number">03</div>
                 <h3>IMPACT</h3>
@@ -1818,6 +1843,7 @@
         console.log('  • Font Awesome icons');
         console.log('  • Lazy-loaded images');
         console.log('  • Powerful taglines and sentences throughout');
+        console.log('  • Bigger partner logos (IEDC Kerala & KSUM)');
     </script>
 
 </body>
