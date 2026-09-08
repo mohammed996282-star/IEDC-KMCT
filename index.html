@@ -120,26 +120,6 @@
                 background-position: 200% 0;
             }
         }
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(60px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
 
         .animate-on-scroll {
             opacity: 0;
@@ -375,6 +355,10 @@
             margin-bottom: 35px;
             animation: fadeInUp 0.8s ease 0.3s both;
         }
+        .hero-text .highlight {
+            color: var(--green-light);
+            font-weight: 600;
+        }
         .hero-buttons {
             display: flex;
             gap: 14px;
@@ -493,7 +477,7 @@
         }
 
         /* ============================================
-                   IMPACT / PROCESS
+                   IMPACT / PROCESS — IMPROVED SENTENCES
                 ============================================ */
         .impact-section {
             background: #080808;
@@ -513,6 +497,7 @@
             border-right: 1px solid var(--border);
             transition: all 0.4s ease;
             cursor: default;
+            position: relative;
         }
         .impact-card:first-child {
             padding-left: 0;
@@ -543,6 +528,15 @@
             font-size: 14px;
             max-width: 300px;
             line-height: 1.7;
+        }
+        .impact-card .tagline {
+            display: block;
+            color: var(--green-light);
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 14px;
+            letter-spacing: 0.3px;
+            font-style: italic;
         }
 
         /* ============================================
@@ -591,6 +585,21 @@
             padding: 38px 40px;
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
             transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .purpose-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--green);
+            transition: height 0.5s ease;
+        }
+        .purpose-card:hover::before {
+            height: 100%;
         }
         .purpose-card:hover {
             transform: translateY(-6px);
@@ -602,19 +611,41 @@
             border-color: #164d2a;
             color: white;
         }
+        .purpose-card.blue-card::before {
+            background: var(--green-light);
+        }
         .purpose-card h3 {
             font-family: "Manrope", sans-serif;
             font-size: 25px;
             margin-bottom: 15px;
             color: white;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .purpose-card h3 i {
+            color: var(--green);
+            font-size: 22px;
         }
         .purpose-card p {
             color: var(--muted);
             font-size: 15px;
-            line-height: 1.7;
+            line-height: 1.8;
         }
         .blue-card p {
             color: #b5c8ba;
+        }
+        .purpose-card .strong-sentence {
+            display: block;
+            color: white;
+            font-weight: 600;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            font-size: 15px;
+        }
+        .blue-card .strong-sentence {
+            color: var(--green-light);
         }
 
         /* ============================================
@@ -734,6 +765,13 @@
             color: var(--muted);
             font-size: 16px;
             line-height: 1.8;
+        }
+        .student-heading .powerful-sentence {
+            color: var(--green-light);
+            font-weight: 600;
+            margin-top: 16px;
+            font-size: 17px;
+            display: block;
         }
 
         .student-list {
@@ -914,10 +952,19 @@
             color: var(--muted);
             margin-bottom: 28px;
             font-size: 16px;
+            line-height: 1.8;
         }
         .cta .btn-primary {
             font-size: 16px;
             padding: 16px 36px;
+        }
+        .cta .cta-tagline {
+            display: block;
+            color: var(--green-light);
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 20px;
+            font-style: italic;
         }
 
         /* ============================================
@@ -1276,6 +1323,8 @@
                 The Innovation and Entrepreneurship Development Cell at KMCT
                 creates an environment where students can transform ideas into
                 innovative solutions, meaningful ventures and real-world impact.
+                <br /><br />
+                <span class="highlight">"Where every idea finds its wings and every dream finds its path."</span>
             </p>
             <div class="hero-buttons">
                 <a href="#team" class="btn btn-primary">
@@ -1296,9 +1345,10 @@
         </div>
     </section>
 
-    <!-- ===== IMPACT / PROCESS ===== -->
+    <!-- ===== IMPACT / PROCESS — UPGRADED WITH BEST SENTENCES ===== -->
     <section class="impact-section" id="process">
         <div class="impact-grid">
+            <!-- IDEATE -->
             <div class="impact-card animate-on-scroll">
                 <div class="impact-number">01</div>
                 <h3>IDEATE</h3>
@@ -1306,7 +1356,10 @@
                     Develop and refine new ideas by identifying opportunities
                     and thinking beyond conventional solutions.
                 </p>
+                <span class="tagline">✨ "Every great innovation begins with a single spark of curiosity."</span>
             </div>
+
+            <!-- INNOVATE -->
             <div class="impact-card animate-on-scroll">
                 <div class="impact-number">02</div>
                 <h3>INNOVATE</h3>
@@ -1314,7 +1367,10 @@
                     Build solutions through creativity, technology,
                     experimentation and collaborative problem solving.
                 </p>
+                <span class="tagline">🚀 "Turning impossible into possible — one breakthrough at a time."</span>
             </div>
+
+            <!-- IMPACT -->
             <div class="impact-card animate-on-scroll">
                 <div class="impact-number">03</div>
                 <h3>IMPACT</h3>
@@ -1322,6 +1378,7 @@
                     Turn ideas into meaningful real-world outcomes that
                     create value for people and society.
                 </p>
+                <span class="tagline">🌍 "Creating ripples of change that transform communities and lives."</span>
             </div>
         </div>
     </section>
@@ -1341,21 +1398,24 @@
 
         <div class="purpose">
             <div class="purpose-card animate-on-scroll">
-                <h3>Our Mission</h3>
+                <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
                 <p>
                     To provide students with the knowledge, resources,
                     mentorship and opportunities needed to transform
                     innovative ideas into practical solutions and
                     entrepreneurial ventures.
                 </p>
+                <span class="strong-sentence">💪 "Empowering the next generation of problem-solvers and change-makers."</span>
             </div>
+
             <div class="purpose-card blue-card animate-on-scroll">
-                <h3>Our Vision</h3>
+                <h3><i class="fas fa-eye"></i> Our Vision</h3>
                 <p>
                     To build a strong student-driven innovation ecosystem
                     where creativity, technology and entrepreneurship come
                     together to create meaningful impact.
                 </p>
+                <span class="strong-sentence">🌟 "Building a future where every student is an innovator and every idea matters."</span>
             </div>
         </div>
     </section>
@@ -1414,6 +1474,7 @@
                 Students from different disciplines coming together to
                 build, experiment, lead and create meaningful impact.
             </p>
+            <span class="powerful-sentence">🔥 "Ten leaders, one mission — turning ideas into impact, together."</span>
         </div>
 
         <div class="student-list">
@@ -1610,10 +1671,15 @@
             <p>
                 Join the IEDC KMCT community and become part of a student
                 ecosystem built around innovation, creativity and entrepreneurship.
+                <br /><br />
+                <span style="color: var(--green-light); font-weight: 600;">
+                    "Your idea might be the next big thing — let's make it happen."
+                </span>
             </p>
             <a href="https://chat.whatsapp.com/ESpXwJv4GVzEG6PHVxnhyE" target="_blank" class="btn btn-primary">
                 <i class="fab fa-whatsapp"></i> Join IEDC KMCT
             </a>
+            <span class="cta-tagline">🌟 "Join us, and let's build the future — together."</span>
         </div>
     </section>
 
@@ -1690,7 +1756,6 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    // Add delay if specified via data-delay attribute
                     const delay = entry.target.getAttribute('data-delay') || 0;
                     setTimeout(() => {
                         entry.target.classList.add('visible');
@@ -1703,7 +1768,6 @@
         });
 
         animateElements.forEach((el, index) => {
-            // Stagger the animations
             el.setAttribute('data-delay', index * 80);
             observer.observe(el);
         });
@@ -1753,6 +1817,7 @@
         console.log('  • Modern dark theme with green accents');
         console.log('  • Font Awesome icons');
         console.log('  • Lazy-loaded images');
+        console.log('  • Powerful taglines and sentences throughout');
     </script>
 
 </body>
