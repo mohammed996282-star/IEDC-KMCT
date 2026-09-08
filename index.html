@@ -11,6 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+/* RESET */
+
 *{
     margin:0;
     padding:0;
@@ -39,7 +42,10 @@ a{
     margin:auto;
 }
 
-/* NAVBAR */
+
+/* =========================
+   NAVBAR
+========================= */
 
 header{
     position:fixed;
@@ -92,7 +98,10 @@ nav{
     border-color:#43a7ff;
 }
 
-/* HERO */
+
+/* =========================
+   HERO
+========================= */
 
 .hero{
     min-height:100vh;
@@ -176,6 +185,7 @@ nav{
     color:#43a7ff;
 }
 
+
 /* HERO LOGO */
 
 .hero-card{
@@ -183,7 +193,11 @@ nav{
     border:1px solid #262626;
     border-radius:30px;
     background:
-        radial-gradient(circle at center,rgba(67,167,255,.12),transparent 55%),
+        radial-gradient(
+            circle at center,
+            rgba(67,167,255,.12),
+            transparent 55%
+        ),
         #0a0a0a;
     display:flex;
     align-items:center;
@@ -199,7 +213,10 @@ nav{
     box-shadow:0 0 70px rgba(67,167,255,.12);
 }
 
-/* IMPACT */
+
+/* =========================
+   IMPACT
+========================= */
 
 .stats{
     border-top:1px solid #222;
@@ -231,7 +248,10 @@ nav{
     font-size:14px;
 }
 
-/* COMMON */
+
+/* =========================
+   COMMON
+========================= */
 
 section{
     padding:130px 0;
@@ -265,7 +285,10 @@ section{
     max-width:400px;
 }
 
-/* PURPOSE */
+
+/* =========================
+   PURPOSE
+========================= */
 
 .mission-grid{
     display:grid;
@@ -305,7 +328,10 @@ section{
     font-size:16px;
 }
 
-/* FACULTY */
+
+/* =========================
+   FACULTY
+========================= */
 
 .faculty{
     background:#080808;
@@ -338,6 +364,11 @@ section{
     object-fit:cover;
     object-position:center top;
     display:block;
+    transition:transform .5s ease;
+}
+
+.faculty-card:hover img{
+    transform:scale(1.05);
 }
 
 .faculty-info{
@@ -364,35 +395,40 @@ section{
     margin-top:5px;
 }
 
-/* STUDENTS */
+
+/* =========================
+   STUDENTS
+   ONE STUDENT PER ROW
+========================= */
 
 .team-grid{
     display:flex;
     flex-direction:column;
-    gap:25px;
+    gap:35px;
 }
 
 .member{
+    width:100%;
     border:1px solid #242424;
-    border-radius:25px;
-    padding:25px;
+    border-radius:28px;
+    padding:30px;
     background:#090909;
     display:flex;
     align-items:center;
-    gap:35px;
+    gap:50px;
     transition:.35s;
 }
 
 .member:hover{
     border-color:#43a7ff;
-    transform:translateY(-4px);
+    transform:translateY(-5px);
 }
 
 .member-image{
-    min-width:280px;
-    width:280px;
-    height:330px;
-    border-radius:20px;
+    flex-shrink:0;
+    width:360px;
+    height:420px;
+    border-radius:22px;
     overflow:hidden;
     background:#111;
 }
@@ -402,40 +438,46 @@ section{
     height:100%;
     object-fit:cover;
     object-position:center top;
-    transition:transform .4s ease;
+    display:block;
+    transition:transform .5s ease;
 }
 
 .member:hover .member-image img{
-    transform:scale(1.05);
+    transform:scale(1.06);
 }
 
 .member-info{
+    flex:1;
     min-width:0;
 }
 
 .member-info h3{
     font-family:"Space Grotesk";
-    font-size:38px;
-    line-height:1.2;
-    margin-bottom:12px;
+    font-size:48px;
+    line-height:1.1;
+    margin-bottom:18px;
 }
 
 .member-info .role{
     display:block;
-    margin-bottom:8px;
-    font-size:15px !important;
+    margin-bottom:10px;
+    font-size:16px !important;
 }
 
 .member-info .department{
-    font-size:14px !important;
+    font-size:15px !important;
+    line-height:1.6;
 }
 
-/* SOCIAL */
+
+/* =========================
+   SOCIAL
+========================= */
 
 .social-links{
     display:flex;
     gap:8px;
-    margin-top:15px;
+    margin-top:20px;
     flex-wrap:wrap;
 }
 
@@ -443,7 +485,7 @@ section{
     display:inline-flex;
     align-items:center;
     justify-content:center;
-    padding:7px 13px;
+    padding:8px 15px;
     border-radius:50px;
     font-size:11px;
     font-weight:600;
@@ -472,7 +514,10 @@ section{
     color:white;
 }
 
-/* CTA */
+
+/* =========================
+   CTA
+========================= */
 
 .cta-section{
     padding:100px 0;
@@ -484,7 +529,11 @@ section{
     padding:90px 60px;
     text-align:center;
     background:
-        radial-gradient(circle at center,rgba(67,167,255,.08),transparent 45%),
+        radial-gradient(
+            circle at center,
+            rgba(67,167,255,.08),
+            transparent 45%
+        ),
         #090909;
 }
 
@@ -507,7 +556,10 @@ section{
     max-width:500px;
 }
 
-/* FOOTER */
+
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     border-top:1px solid #222;
@@ -530,7 +582,10 @@ footer{
     font-size:13px;
 }
 
-/* MOBILE */
+
+/* =========================
+   TABLET
+========================= */
 
 @media(max-width:900px){
 
@@ -543,8 +598,7 @@ footer{
     }
 
     .mission-grid,
-    .faculty-grid,
-    .team-grid{
+    .faculty-grid{
         grid-template-columns:1fr;
     }
 
@@ -552,7 +606,27 @@ footer{
         flex-direction:column;
         align-items:flex-start;
     }
+
+    /* Student remains one per row */
+    .member{
+        gap:30px;
+    }
+
+    .member-image{
+        width:280px;
+        min-width:280px;
+        height:350px;
+    }
+
+    .member-info h3{
+        font-size:36px;
+    }
 }
+
+
+/* =========================
+   MOBILE
+========================= */
 
 @media(max-width:650px){
 
@@ -615,29 +689,38 @@ footer{
         height:350px;
     }
 
-   .member{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:18px;
-    gap:20px;
-}
 
-.member-image{
-    width:100%;
-    min-width:100%;
-    height:350px;
-}
+    /* MOBILE STUDENTS */
 
-.member-info h3{
-    font-size:28px;
-}
+    .team-grid{
+        gap:25px;
+    }
+
+    .member{
+        flex-direction:column;
+        align-items:stretch;
+        padding:18px;
+        gap:22px;
+    }
+
+    .member-image{
+        width:100%;
+        min-width:100%;
+        height:420px;
+    }
+
+    .member-info h3{
+        font-size:32px;
+    }
+
     .member-info .role{
-        font-size:11px !important;
+        font-size:12px !important;
     }
 
     .member-info .department{
-        font-size:11px !important;
+        font-size:12px !important;
     }
+
 
     .cta-box{
         padding:70px 25px;
@@ -647,24 +730,22 @@ footer{
         flex-direction:column;
         text-align:center;
     }
-}
-    .member-image img,
-.faculty-card img {
-    transition: transform 0.4s ease;
+
 }
 
-.member:hover .member-image img,
-.faculty-card:hover img {
-    transform: scale(1.08);
-}
 </style>
 </head>
 
+
 <body>
 
-<!-- NAVBAR -->
+
+<!-- =========================
+     NAVBAR
+========================= -->
 
 <header>
+
 <div class="container">
 
 <nav>
@@ -675,13 +756,25 @@ footer{
 
 <ul class="nav-links">
 
-<li><a href="#about">About</a></li>
-<li><a href="#purpose">Purpose</a></li>
-<li><a href="#faculty">Faculty</a></li>
-<li><a href="#team">Team</a></li>
+<li>
+<a href="#about">About</a>
+</li>
 
 <li>
-<a href="https://chat.whatsapp.com/ESpXwJv4GVzEG6PHVxnhyE"
+<a href="#purpose">Purpose</a>
+</li>
+
+<li>
+<a href="#faculty">Faculty</a>
+</li>
+
+<li>
+<a href="#team">Team</a>
+</li>
+
+<li>
+<a
+href="https://chat.whatsapp.com/ESpXwJv4GVzEG6PHVxnhyE"
 target="_blank"
 class="nav-button">
 Contact Us
@@ -693,12 +786,17 @@ Contact Us
 </nav>
 
 </div>
+
 </header>
+
 
 
 <main>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
 
 <section class="hero" id="about">
 
@@ -735,6 +833,7 @@ Discover our vision
 
 </div>
 
+
 <div class="hero-card">
 
 <img
@@ -749,7 +848,10 @@ class="hero-logo">
 </section>
 
 
-<!-- IDEATE INNOVATE IMPACT -->
+
+<!-- =========================
+     IDEATE / INNOVATE / IMPACT
+========================= -->
 
 <section class="stats">
 
@@ -758,18 +860,35 @@ class="hero-logo">
 <div class="stats-grid">
 
 <div class="stat">
+
 <h2>IDEATE</h2>
-<p>Develop and refine new ideas.</p>
+
+<p>
+Develop and refine new ideas.
+</p>
+
 </div>
 
+
 <div class="stat">
+
 <h2>INNOVATE</h2>
-<p>Build solutions through creativity and technology.</p>
+
+<p>
+Build solutions through creativity and technology.
+</p>
+
 </div>
 
+
 <div class="stat">
+
 <h2>IMPACT</h2>
-<p>Turn ideas into meaningful real-world outcomes.</p>
+
+<p>
+Turn ideas into meaningful real-world outcomes.
+</p>
+
 </div>
 
 </div>
@@ -779,7 +898,10 @@ class="hero-logo">
 </section>
 
 
-<!-- OUR PURPOSE -->
+
+<!-- =========================
+     PURPOSE
+========================= -->
 
 <section id="purpose">
 
@@ -809,6 +931,7 @@ experiment, collaborate and turn ideas into impact.
 
 
 <div class="mission-grid">
+
 
 <div class="mission-card">
 
@@ -847,6 +970,7 @@ solutions that make a meaningful difference in society.
 
 </div>
 
+
 </div>
 
 </div>
@@ -854,7 +978,10 @@ solutions that make a meaningful difference in society.
 </section>
 
 
-<!-- FACULTY -->
+
+<!-- =========================
+     FACULTY
+========================= -->
 
 <section class="faculty" id="faculty">
 
@@ -896,7 +1023,9 @@ alt="Abdul Majeed K M">
 
 <div class="faculty-info">
 
-<h3>Abdul Majeed K M</h3>
+<h3>
+Abdul Majeed K M
+</h3>
 
 <p class="role">
 IEDC Nodal Officer
@@ -925,6 +1054,7 @@ WhatsApp
 </div>
 
 
+
 <!-- ABDUL MUJEEB -->
 
 <div class="faculty-card">
@@ -935,7 +1065,9 @@ alt="Abdul Mujeeb M S">
 
 <div class="faculty-info">
 
-<h3>Abdul Mujeeb M S</h3>
+<h3>
+Abdul Mujeeb M S
+</h3>
 
 <p class="role">
 IEDC Nodal Officer
@@ -963,6 +1095,7 @@ WhatsApp
 
 </div>
 
+
 </div>
 
 </div>
@@ -970,7 +1103,10 @@ WhatsApp
 </section>
 
 
-<!-- STUDENT TEAM -->
+
+<!-- =========================
+     STUDENT TEAM
+========================= -->
 
 <section id="team">
 
@@ -1002,19 +1138,29 @@ organize and grow the IEDC community.
 <div class="team-grid">
 
 
-<!-- JAZEEL -->
+<!-- =========================
+     JAZEEL
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/jazeel.jpg" alt="Muhammed Jazeel">
+
+<img
+src="images/jazeel.jpg"
+alt="Muhammed Jazeel">
+
 </div>
 
 <div class="member-info">
 
-<h3>Muhammed Jazeel</h3>
+<h3>
+Muhammed Jazeel
+</h3>
 
-<span class="role">Student Lead 1</span>
+<span class="role">
+Student Lead 1
+</span>
 
 <p class="department">
 Computer Science & Engineering
@@ -1022,13 +1168,15 @@ Computer Science & Engineering
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/muhammed-jazeel-c-a-832a62427/"
+<a
+href="https://www.linkedin.com/in/muhammed-jazeel-c-a-832a62427/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/919947397003"
+<a
+href="https://wa.me/919947397003"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1041,19 +1189,30 @@ WhatsApp
 </div>
 
 
-<!-- AYSHA -->
+
+<!-- =========================
+     AYSHA
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/aysha.jpg" alt="Aysha M">
+
+<img
+src="images/aysha.jpg"
+alt="Aysha M">
+
 </div>
 
 <div class="member-info">
 
-<h3>Aysha M</h3>
+<h3>
+Aysha M
+</h3>
 
-<span class="role">Student Lead 2</span>
+<span class="role">
+Student Lead 2
+</span>
 
 <p class="department">
 Artificial Intelligence & Data Science
@@ -1061,13 +1220,15 @@ Artificial Intelligence & Data Science
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/aysha-malik-44b271390/"
+<a
+href="https://www.linkedin.com/in/aysha-malik-44b271390/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/919048409538"
+<a
+href="https://wa.me/919048409538"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1080,19 +1241,30 @@ WhatsApp
 </div>
 
 
-<!-- MOHAMMED -->
+
+<!-- =========================
+     MOHAMMED
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/mohammed.jpg" alt="Mohammed K N">
+
+<img
+src="images/mohammed.jpg"
+alt="Mohammed K N">
+
 </div>
 
 <div class="member-info">
 
-<h3>Mohammed K N</h3>
+<h3>
+Mohammed K N
+</h3>
 
-<span class="role">Tech Lead</span>
+<span class="role">
+Tech Lead
+</span>
 
 <p class="department">
 Computer Science & Engineering
@@ -1100,13 +1272,15 @@ Computer Science & Engineering
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/mohammed-k-n-78773b390/"
+<a
+href="https://www.linkedin.com/in/mohammed-k-n-78773b390/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/919526602008"
+<a
+href="https://wa.me/919526602008"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1119,17 +1293,26 @@ WhatsApp
 </div>
 
 
-<!-- RUSHQAIQA -->
+
+<!-- =========================
+     RUSHQAIQA
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/rushaiqa.jpg" alt="Rushaiqa C M">
+
+<img
+src="images/rushaiqa.jpg"
+alt="Rushaiqa C M">
+
 </div>
 
 <div class="member-info">
 
-<h3>Rushaiqa C M</h3>
+<h3>
+Rushaiqa C M
+</h3>
 
 <span class="role">
 Community and Event Management Lead
@@ -1141,13 +1324,15 @@ Artificial Intelligence & Data Science
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/rushaiqa-cm-580303423/"
+<a
+href="https://www.linkedin.com/in/rushaiqa-cm-580303423/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/918157956455"
+<a
+href="https://wa.me/918157956455"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1160,17 +1345,26 @@ WhatsApp
 </div>
 
 
-<!-- SADHAFA -->
+
+<!-- =========================
+     SADHAFA
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/sadhafa.jpg" alt="Sadhafa Fazal">
+
+<img
+src="images/sadhafa.jpg"
+alt="Sadhafa Fazal">
+
 </div>
 
 <div class="member-info">
 
-<h3>Sadhafa Fazal</h3>
+<h3>
+Sadhafa Fazal
+</h3>
 
 <span class="role">
 Woman Entrepreneurship Lead
@@ -1182,13 +1376,15 @@ Computer Science & Engineering
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/haleema-sadhafa-fazal-642315399/"
+<a
+href="https://www.linkedin.com/in/haleema-sadhafa-fazal-642315399/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/917510911635"
+<a
+href="https://wa.me/917510911635"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1201,17 +1397,26 @@ WhatsApp
 </div>
 
 
-<!-- UNNIMAYA -->
+
+<!-- =========================
+     UNNIMAYA
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/unnimaya.jpg" alt="Unnimaya T">
+
+<img
+src="images/unnimaya.jpg"
+alt="Unnimaya T">
+
 </div>
 
 <div class="member-info">
 
-<h3>Unnimaya T</h3>
+<h3>
+Unnimaya T
+</h3>
 
 <span class="role">
 Branding and Marketing Lead
@@ -1223,13 +1428,15 @@ Artificial Intelligence & Data Science
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/unnimaya-madhav-522a04420/"
+<a
+href="https://www.linkedin.com/in/unnimaya-madhav-522a04420/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/919778712161"
+<a
+href="https://wa.me/919778712161"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1242,17 +1449,26 @@ WhatsApp
 </div>
 
 
-<!-- RUFAID -->
+
+<!-- =========================
+     RUFAID
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/rufaid.jpg" alt="Rufaid Abdulla">
+
+<img
+src="images/rufaid.jpg"
+alt="Rufaid Abdulla">
+
 </div>
 
 <div class="member-info">
 
-<h3>Rufaid Abdulla</h3>
+<h3>
+Rufaid Abdulla
+</h3>
 
 <span class="role">
 Creative and Innovation Lead
@@ -1264,13 +1480,15 @@ Artificial Intelligence & Data Science
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/rufaid-abdulla-581732390/"
+<a
+href="https://www.linkedin.com/in/rufaid-abdulla-581732390/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/971559130295"
+<a
+href="https://wa.me/971559130295"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1283,17 +1501,26 @@ WhatsApp
 </div>
 
 
-<!-- ALAN -->
+
+<!-- =========================
+     ALAN
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/alan.jpg" alt="Alan Albin">
+
+<img
+src="images/alan.jpg"
+alt="Alan Albin">
+
 </div>
 
 <div class="member-info">
 
-<h3>Alan Albin</h3>
+<h3>
+Alan Albin
+</h3>
 
 <span class="role">
 Finance Lead
@@ -1305,13 +1532,15 @@ Computer Science & Engineering
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/alan-albin-909113316/"
+<a
+href="https://www.linkedin.com/in/alan-albin-909113316/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/918848563266"
+<a
+href="https://wa.me/918848563266"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1324,17 +1553,26 @@ WhatsApp
 </div>
 
 
-<!-- SHIZA -->
+
+<!-- =========================
+     SHIZA
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/shiza.jpg" alt="Fathima Shiza Sidhik">
+
+<img
+src="images/shiza.jpg"
+alt="Fathima Shiza Sidhik">
+
 </div>
 
 <div class="member-info">
 
-<h3>Fathima Shiza Sidhik</h3>
+<h3>
+Fathima Shiza Sidhik
+</h3>
 
 <span class="role">
 Quality and Operation Lead
@@ -1346,13 +1584,15 @@ Artificial Intelligence & Data Science
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/shiza-sidhik-0b3797413/"
+<a
+href="https://www.linkedin.com/in/shiza-sidhik-0b3797413/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/918138914094"
+<a
+href="https://wa.me/918138914094"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1365,17 +1605,26 @@ WhatsApp
 </div>
 
 
-<!-- HAYA -->
+
+<!-- =========================
+     HAYA
+========================= -->
 
 <div class="member">
 
 <div class="member-image">
-<img src="images/haya.jpg" alt="Haya Fathima">
+
+<img
+src="images/haya.jpg"
+alt="Haya Fathima">
+
 </div>
 
 <div class="member-info">
 
-<h3>Haya Fathima</h3>
+<h3>
+Haya Fathima
+</h3>
 
 <span class="role">
 IPR and Research Lead
@@ -1387,13 +1636,15 @@ Artificial Intelligence & Data Science
 
 <div class="social-links">
 
-<a href="https://www.linkedin.com/in/haya-fathima-7871bb395/"
+<a
+href="https://www.linkedin.com/in/haya-fathima-7871bb395/"
 target="_blank"
 class="linkedin">
 LinkedIn
 </a>
 
-<a href="https://wa.me/918921409192"
+<a
+href="https://wa.me/918921409192"
 target="_blank"
 class="whatsapp">
 WhatsApp
@@ -1413,7 +1664,10 @@ WhatsApp
 </section>
 
 
-<!-- CTA -->
+
+<!-- =========================
+     CTA
+========================= -->
 
 <section class="cta-section">
 
@@ -1444,10 +1698,14 @@ Contact Us on WhatsApp →
 
 </section>
 
+
 </main>
 
 
-<!-- FOOTER -->
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
@@ -1456,7 +1714,11 @@ Contact Us on WhatsApp →
 <div class="footer-content">
 
 <div class="footer-logo">
-<img src="images/iedc-logo.png" alt="IEDC KMCT">
+
+<img
+src="images/iedc-logo.png"
+alt="IEDC KMCT">
+
 </div>
 
 <p>
@@ -1476,6 +1738,7 @@ KMCT College of Engineering for Emerging Technologies and Management
 </div>
 
 </footer>
+
 
 </body>
 </html>
